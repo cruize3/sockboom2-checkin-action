@@ -2,12 +2,14 @@ name: 'SockBoom Checkin Action'
 
 on:
   schedule:
-    - cron: "17 15 * * *"
+    - cron: "19 15 * * *"
 
 jobs:
   checking:
     runs-on: ubuntu-latest
 #    if: github.event.repository.owner.id == github.event.sender.id # 自己点的 start
+    env:
+      URL: ${{ secrets.URL }}
     steps:
       - name: Setup timezone
         uses: zcong1993/setup-timezone@master
@@ -19,7 +21,6 @@ jobs:
         env:
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          URL: ${{ secrets.URL }}
         run: |
           echo -en $(curl -c cookie.txt -X POST "https://$URL/auth/login" -d email="$EMAIL" -d passwd="$PASSWORD")
       - name: Chick in Api #签到
