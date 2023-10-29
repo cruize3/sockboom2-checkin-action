@@ -2,7 +2,7 @@ name: 'SockBoom Checkin Action'
 
 on:
   schedule:
-    - cron: "0 23 * * *"
+    - cron: "20 14 * * *"
 
 jobs:
   checking:
