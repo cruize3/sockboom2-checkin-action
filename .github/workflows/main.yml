@@ -2,7 +2,7 @@ name: 'SockBoom Checkin Action'
 
 on:
   schedule:
-    - cron: "25 14 * * *"
+    - cron: "58 14 * * *"
 
 jobs:
   checking:
@@ -19,6 +19,7 @@ jobs:
         env:
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          URL: ${{ secrets.URL }}
         run: |
           echo -en $(curl -c cookie.txt -X POST "https://$URL/auth/login" -d email="$EMAIL" -d passwd="$PASSWORD")
       - name: Chick in Api #签到
