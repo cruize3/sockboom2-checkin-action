@@ -10,8 +10,6 @@
   - SockBoom密码
 - SUFFIX
   - SockBoom域名后缀
-~- URL~
-  ~- SockBoom域名~
 
 
 ## 启用
