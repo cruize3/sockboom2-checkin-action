@@ -8,8 +8,11 @@
   - SockBoom邮箱
 - PASSWORD
   - SockBoom密码
-- URL
-  - SockBoom域名
+- SUFFIX
+  - SockBoom域名后缀
+~- URL~
+  ~- SockBoom域名~
+
 
 ## 启用
 
